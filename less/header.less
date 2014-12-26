@@ -1,0 +1,33 @@
+header {
+  position:fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: @header-height;
+  color: @header-color;
+  background-color:lighten(@body-background, 20%);
+  z-index:9999;
+  .header-bars {
+    .visible-mobile;
+    .make-xs-column(1);
+    height: 50px;
+    line-height: 50px;
+  }
+  .header-title {
+    .make-xs-column(11);
+    .make-md-column(6);
+    line-height: @header-height;
+  }
+  .header-link {
+    .hidden-mobile;
+    .make-md-column(5);
+    line-height: @header-height;
+  }
+  .header-link {
+    .page-link {
+      border: 0px solid green;
+      margin-left: @header-height / 2;
+      color: @link-color;
+    }
+  }
+}

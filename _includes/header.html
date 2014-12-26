@@ -1,0 +1,12 @@
+
+<header>
+  <div class="header-bars">
+    <div class="fa fa-bars fa-fw fa-2x"></div>
+  </div>
+  <div class="header-title">{{ site.title }}</div>
+  <div class="header-link">
+    {% for page in site.pages %}
+    {% if page.title %}<a href="{{ page.url | prepend: site.baseurl }}" class="page-link">{{ page.title }}</a>{% endif %}
+    {% endfor %}
+  </div>
+</header>

@@ -1,0 +1,28 @@
+="---\n"
+="layout: default\n"
+="---\n"
+
+
+.home
+
+  .grid
+    |{% for post in site.posts %}
+
+    .post
+      a(href="{{ post.url | prepend: site.baseurl }}")
+        .cover(style="background-image: url('{{ post.cover }}')")
+      .content
+        .link: a(href="{{ post.url | prepend: site.baseurl }}") {{ post.title }}
+        .summary {{ post.summary }}
+      .info
+        //- .author
+        //-   .icon.fa.fa-user
+        //-   .text {{ post.author }}
+        .date
+          .icon.fa.fa-clock-o
+          .text {{ post.date | date: "%b %-d, %Y" }}
+
+
+    |{% endfor %}
+
+//-.suscribe: a(href="{{ '/feed.xml' | prepend: site.baseurl }}") via RSS

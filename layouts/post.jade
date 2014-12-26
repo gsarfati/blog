@@ -1,0 +1,14 @@
+="---\n"
+="layout: default\n"
+="---\n"
+
+.post-container
+
+  header
+    h1.title {{ page.title }}
+    //- p.post-meta {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
+
+  article
+
+    .cover(style="background-image: url('{{ page.cover | prepend: site.url }}')")
+    .content {{ content }}
