@@ -47,6 +47,11 @@
   }
   .mobile {
     .visible-mobile;
+    .post {
+      .post-timeline-right;
+      .post-timeline-style;
+      .date-mobile;
+    }
   }
 
 }
@@ -208,6 +213,21 @@
     z-index:999;
     border:0px solid #3F406C;
     background: lighten(#3F406C, 10%);
+    display:inline;
+    padding: 6px 12px 6px 12px;
+    color:white;
+    .icon, .text {
+      display:inline;
+      padding-right:10px;
+    }
+  }
+}
+
+.date-mobile {
+  .date {
+    .text-center;
+    .make-md-column(4);
+    font-size: 0.7em;
     display:inline;
     padding: 6px 12px 6px 12px;
     color:white;
