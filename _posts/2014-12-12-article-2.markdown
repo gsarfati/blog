@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Creer un site jekyll"
-date:   2014-12-5 22:25:46
+title:  "Article 2"
+date:   2014-12-12 22:25:46
 cover: "img/angular.png"
 author: "gsarfati"
 summary: "You’ll find this post in your directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated."

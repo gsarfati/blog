@@ -6,23 +6,111 @@
 .home
 
   .grid
-    |{% for post in site.posts %}
+    .left
+      .profile
+        a(href="http://github.com/gsarfati")
+          .cover(style="background-image: url('https://avatars1.githubusercontent.com/u/6457557')")
+        .content
+          .link: a(href="{{ post.url | prepend: site.baseurl }}") {{ post.title }}
+          .summary Salut bienvenue sur mon blog je vais essayer de partager avec vous ce que j'apprend tous les jours sur le web bla bla bla
 
-    .post
-      a(href="{{ post.url | prepend: site.baseurl }}")
-        .cover(style="background-image: url('{{ post.cover }}')")
-      .content
-        .link: a(href="{{ post.url | prepend: site.baseurl }}") {{ post.title }}
-        .summary {{ post.summary }}
-      .info
-        //- .author
-        //-   .icon.fa.fa-user
-        //-   .text {{ post.author }}
-        .date
-          .icon.fa.fa-clock-o
-          .text {{ post.date | date: "%b %-d, %Y" }}
+      |{% for post in site.posts %}
+      |{% capture statusLeft %}{% cycle 'odd', 'even' %}{% endcapture %}
+      |{% if statusLeft == 'even' %}
+      .post
+        a(href="{{ post.url | prepend: site.baseurl }}")
+          .cover(style="background-image: url('{{ post.cover }}')")
+        .content
+          .link: a(href="{{ post.url | prepend: site.baseurl }}") {{ post.title }}
+          .summary {{ post.summary }} {{ post.summary }}
+        .info
+          .date
+            .icon.fa.fa-clock-o
+            .text.
+              {{ post.date | date: '%d' }} {% assign m = post.date | date: "%-m" %}
+              {% case m %}
+                {% when '1' %} janvier
+                {% when '2' %} février
+                {% when '3' %} mars
+                {% when '4' %} avril
+                {% when '5' %} mai
+                {% when '6' %} juin
+                {% when '7' %} juillet
+                {% when '8' %} août
+                {% when '9' %} septembre
+                {% when '10' %} octobre
+                {% when '11' %} novembre
+                {% when '12' %} décembre
+              {% endcase %} {{ page.date | date: '%Y' }}
+
+      |{% endif %}
+      |{% endfor %}
+
+    .timeline
+
+    .right
+      |{% for post in site.posts %}
+      |{% capture statusRight %}{% cycle 'odd', 'even' %}{% endcapture %}
+      |{% if statusRight == 'even' %}
+      .post
+        a(href="{{ post.url | prepend: site.baseurl }}")
+          .cover(style="background-image: url('{{ post.cover }}')")
+        .content
+          .link: a(href="{{ post.url | prepend: site.baseurl }}") {{ post.title }}
+          .summary {{ post.summary }}
+        .info
+          .date
+            .icon.fa.fa-clock-o
+            .text.
+              {{ post.date | date: '%d' }} {% assign m = post.date | date: "%-m" %}
+              {% case m %}
+                {% when '1' %} janvier
+                {% when '2' %} février
+                {% when '3' %} mars
+                {% when '4' %} avril
+                {% when '5' %} mai
+                {% when '6' %} juin
+                {% when '7' %} juillet
+                {% when '8' %} août
+                {% when '9' %} septembre
+                {% when '10' %} octobre
+                {% when '11' %} novembre
+                {% when '12' %} décembre
+              {% endcase %} {{ page.date | date: '%Y' }}
+
+      |{% endif %}
+      |{% endfor %}
+
+    .mobile
+      |{% for post in site.posts %}
+      .post
+        a(href="{{ post.url | prepend: site.baseurl }}")
+          .cover(style="background-image: url('{{ post.cover }}')")
+        .content
+          .link: a(href="{{ post.url | prepend: site.baseurl }}") {{ post.title }}
+          .summary {{ post.summary }}
+        .info
+          .date
+            .icon.fa.fa-clock-o
+            .text.
+              {{ post.date | date: '%d' }} {% assign m = post.date | date: "%-m" %}
+              {% case m %}
+                {% when '1' %} janvier
+                {% when '2' %} février
+                {% when '3' %} mars
+                {% when '4' %} avril
+                {% when '5' %} mai
+                {% when '6' %} juin
+                {% when '7' %} juillet
+                {% when '8' %} août
+                {% when '9' %} septembre
+                {% when '10' %} octobre
+                {% when '11' %} novembre
+                {% when '12' %} décembre
+              {% endcase %} {{ page.date | date: '%Y' }}
+
+      |{% endfor %}
 
 
-    |{% endfor %}
 
 //-.suscribe: a(href="{{ '/feed.xml' | prepend: site.baseurl }}") via RSS
