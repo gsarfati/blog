@@ -50,7 +50,7 @@ layout: default
     <div class="right">
       {% for post in site.posts %}
       {% capture statusRight %}{% cycle 'odd', 'even' %}{% endcapture %}
-      {% if statusRight == 'even' %}
+      {% if statusRight == 'odd' %}
       <div class="post"><a href="{{ post.url | prepend: site.baseurl }}">
           <div style="background-image: url('{{ post.cover }}')" class="cover"></div></a>
         <div class="content">

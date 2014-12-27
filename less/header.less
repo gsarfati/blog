@@ -7,20 +7,15 @@ header {
   color: @header-color;
   background-color:lighten(@body-background, 20%);
   z-index:9999;
-  .header-bars {
-    .visible-mobile;
-    .make-xs-column(1);
-    height: 50px;
-    line-height: 50px;
-  }
+
   .header-title {
-    .make-xs-column(11);
+    .make-xs-column(12);
     .make-md-column(6);
     line-height: @header-height;
   }
   .header-link {
     .hidden-mobile;
-    .make-md-column(5);
+    .make-md-column(6);
     line-height: @header-height;
   }
   .header-link {

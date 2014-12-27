@@ -8010,24 +8010,9 @@ header {
   background-color: #696ba8;
   z-index: 9999;
 }
-header .header-bars {
-  position: relative;
-  float: left;
-  width: 8.33333333%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  height: 50px;
-  line-height: 50px;
-}
-@media (min-width: 992px) {
-  header .header-bars {
-    display: none;
-  }
-}
 header .header-title {
   float: left;
-  width: 91.66666667%;
+  width: 100%;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -8055,7 +8040,7 @@ header .header-link {
 @media (min-width: 992px) {
   header .header-link {
     float: left;
-    width: 41.66666667%;
+    width: 50%;
   }
 }
 header .header-link .page-link {

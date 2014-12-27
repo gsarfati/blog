@@ -51,7 +51,7 @@
     .right
       |{% for post in site.posts %}
       |{% capture statusRight %}{% cycle 'odd', 'even' %}{% endcapture %}
-      |{% if statusRight == 'even' %}
+      |{% if statusRight == 'odd' %}
       .post
         a(href="{{ post.url | prepend: site.baseurl }}")
           .cover(style="background-image: url('{{ post.cover }}')")
