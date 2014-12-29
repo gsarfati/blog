@@ -1,4 +1,6 @@
+img
 _site
+_posts
 .sass-cache
 node_modules/
 .DS_Store

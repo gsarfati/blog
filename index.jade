@@ -11,47 +11,19 @@
         a(href="http://github.com/gsarfati")
           .cover(style="background-image: url('https://avatars1.githubusercontent.com/u/6457557')")
         .content
-          .link: a(href="{{ post.url | prepend: site.baseurl }}") {{ post.title }}
-          .summary Salut bienvenue sur mon blog je vais essayer de partager avec vous ce que j'apprend tous les jours sur le web bla bla bla
-
-      |{% for post in site.posts %}
-      |{% capture statusLeft %}{% cycle 'odd', 'even' %}{% endcapture %}
-      |{% if statusLeft == 'even' %}
-      .post
-        a(href="{{ post.url | prepend: site.baseurl }}")
-          .cover(style="background-image: url('{{ post.cover }}')")
-        .content
-          .link: a(href="{{ post.url | prepend: site.baseurl }}") {{ post.title }}
-          .summary {{ post.summary }} {{ post.summary }}
-        .info
-          .date
-            .icon.fa.fa-clock-o
-            .text.
-              {{ post.date | date: '%d' }} {% assign m = post.date | date: "%-m" %}
-              {% case m %}
-                {% when '1' %} janvier
-                {% when '2' %} février
-                {% when '3' %} mars
-                {% when '4' %} avril
-                {% when '5' %} mai
-                {% when '6' %} juin
-                {% when '7' %} juillet
-                {% when '8' %} août
-                {% when '9' %} septembre
-                {% when '10' %} octobre
-                {% when '11' %} novembre
-                {% when '12' %} décembre
-              {% endcase %} {{ page.date | date: '%Y' }}
-
-      |{% endif %}
-      |{% endfor %}
-
+          .link Pourquoi ce blog ?
+          .summary
+            br
+            |Qui suis-je ?
+            |Je m'appel Guillaume , j'ai 23 ans et je suis étudiant à 42 j'ai tout quitté en 2013 pour rejoindre cette formidable école dès sa première promo. Je ne prétend pas etre bon dans tous les domaines de l'informatique mais j'essaye d'apprendre tous les jours de nouvelles choses. Je vais essayer de vous faire partager ma passion la programmation!
+            br
+            br
+            |Pourquoi ce blog ?
+            |Pour apprendre continuellement tous les jours et ne pas rester dans ma zone de confort , je vais essayer de publier des articles sur divers sujets liés a mon univers professionnel. N'hésitez pas a faires des pull request pour publier des articles, me corriger ou meme pour améliorer le blog que j'ai fais trés rapidement sous Jekyll !
     .timeline
 
     .right
       |{% for post in site.posts %}
-      |{% capture statusRight %}{% cycle 'odd', 'even' %}{% endcapture %}
-      |{% if statusRight == 'odd' %}
       .post
         a(href="{{ post.url | prepend: site.baseurl }}")
           .cover(style="background-image: url('{{ post.cover }}')")
@@ -78,8 +50,8 @@
                 {% when '12' %} décembre
               {% endcase %} {{ page.date | date: '%Y' }}
 
-      |{% endif %}
       |{% endfor %}
+
 
     .mobile
       |{% for post in site.posts %}
@@ -110,6 +82,8 @@
               {% endcase %} {{ page.date | date: '%Y' }}
 
       |{% endfor %}
+
+footer Création du blog 1er Janvier 2015
 
 
 

@@ -8,49 +8,16 @@ layout: default
       <div class="profile"><a href="http://github.com/gsarfati">
           <div style="background-image: url('https://avatars1.githubusercontent.com/u/6457557')" class="cover"></div></a>
         <div class="content">
-          <div class="link"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
-          <div class="summary">Salut bienvenue sur mon blog je vais essayer de partager avec vous ce que j'apprend tous les jours sur le web bla bla bla</div>
-        </div>
-      </div>{% for post in site.posts %}
-      {% capture statusLeft %}{% cycle 'odd', 'even' %}{% endcapture %}
-      {% if statusLeft == 'even' %}
-      <div class="post"><a href="{{ post.url | prepend: site.baseurl }}">
-          <div style="background-image: url('{{ post.cover }}')" class="cover"></div></a>
-        <div class="content">
-          <div class="link"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
-          <div class="summary">{{ post.summary }} {{ post.summary }}</div>
-        </div>
-        <div class="info">
-          <div class="date">
-            <div class="icon fa fa-clock-o"></div>
-            <div class="text">
-              {{ post.date | date: '%d' }} {% assign m = post.date | date: "%-m" %}
-              {% case m %}
-                {% when '1' %} janvier
-                {% when '2' %} février
-                {% when '3' %} mars
-                {% when '4' %} avril
-                {% when '5' %} mai
-                {% when '6' %} juin
-                {% when '7' %} juillet
-                {% when '8' %} août
-                {% when '9' %} septembre
-                {% when '10' %} octobre
-                {% when '11' %} novembre
-                {% when '12' %} décembre
-              {% endcase %} {{ page.date | date: '%Y' }}
-              
-            </div>
+          <div class="link">Pourquoi ce blog ?</div>
+          <div class="summary"><br/>Qui suis-je ?
+            Je m'appel Guillaume , j'ai 23 ans et je suis étudiant à 42 j'ai tout quitté en 2013 pour rejoindre cette formidable école dès sa première promo. Je ne prétend pas etre bon dans tous les domaines de l'informatique mais j'essaye d'apprendre tous les jours de nouvelles choses. Je vais essayer de vous faire partager ma passion la programmation!<br/><br/>Pourquoi ce blog ?
+            Pour apprendre continuellement tous les jours et ne pas rester dans ma zone de confort , je vais essayer de publier des articles sur divers sujets liés a mon univers professionnel. N'hésitez pas a faires des pull request pour publier des articles, me corriger ou meme pour améliorer le blog que j'ai fais trés rapidement sous Jekyll !
           </div>
         </div>
-      </div>{% endif %}
-      {% endfor %}
+      </div>
     </div>
     <div class="timeline"></div>
-    <div class="right">
-      {% for post in site.posts %}
-      {% capture statusRight %}{% cycle 'odd', 'even' %}{% endcapture %}
-      {% if statusRight == 'odd' %}
+    <div class="right">{% for post in site.posts %}
       <div class="post"><a href="{{ post.url | prepend: site.baseurl }}">
           <div style="background-image: url('{{ post.cover }}')" class="cover"></div></a>
         <div class="content">
@@ -80,8 +47,7 @@ layout: default
             </div>
           </div>
         </div>
-      </div>{% endif %}
-      {% endfor %}
+      </div>{% endfor %}
     </div>
     <div class="mobile">{% for post in site.posts %}
       <div class="post"><a href="{{ post.url | prepend: site.baseurl }}">
@@ -117,3 +83,4 @@ layout: default
     </div>
   </div>
 </div>
+<footer>Création du blog 1er Janvier 2015</footer>

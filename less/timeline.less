@@ -11,10 +11,14 @@
 
     .profile {
       .make-md-column(12);
+      text-align:justify;
       margin-bottom: 50px;
       background: @grid-post-content-background;
       color: white;
       padding:25px;
+      .link {
+        font-size:2em;
+      }
 
     }
     .post {
@@ -29,7 +33,6 @@
     .hidden-mobile;
     .make-md-column(2);
     display:table-cell;
-    content: 'toto';
   }
   .right {
 
@@ -97,10 +100,10 @@
   &::after {
     content: '';
     position: absolute;
-    top: -50%;
+    top: -200%;
     left: 125%;
     margin-left: -1px;
-    height: 200%;
+    height: 400%;
     width: 4px;
     background: lighten(#3F406C, 10%);
     .hidden-mobile;
@@ -123,6 +126,17 @@
 .post-timeline-right {
   .make-xs-column(12);
   margin-bottom: 50px;
+  &::after {
+    content: '';
+    position: absolute;
+    top: -200%;
+    right: 125%;
+    margin-left: -1px;
+    height: 400%;
+    width: 4px;
+    background: lighten(#3F406C, 10%);
+    .hidden-mobile;
+  }
 
 }
 
@@ -147,6 +161,7 @@
       font-size:2em;
     }
     .summary {
+      text-align: justify;
       color:white;
       .read {
         color: rgba(255, 255, 255, 0.7);
