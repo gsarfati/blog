@@ -1,5 +1,6 @@
 header
-  .header-title {{ site.title }}
+  img(src="{{ site.logo | prepend: site.url }}")
+  //.header-title {{ site.title }}
   .header-link
 
     | {% for page in site.pages %}

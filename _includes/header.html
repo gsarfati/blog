@@ -1,6 +1,6 @@
 
-<header>
-  <div class="header-title">{{ site.title }}</div>
+<header><img src="{{ site.logo | prepend: site.url }}"/>
+  <!--.header-title {{ site.title }}-->
   <div class="header-link">
     {% for page in site.pages %}
     {% if page.title %}<a href="{{ page.url | prepend: site.baseurl }}" class="page-link">{{ page.title }}</a>{% endif %}

@@ -3,11 +3,11 @@ layout: default
 ---
 
 <div class="post-container">
-  <header>
-    <div class="header-title">{{ page.title }}</div>
-  </header>
   <article>
+    <div class="title">{{ page.title | upcase }}</div>
     <div style="background-image: url('{{ page.cover | prepend: site.url }}')" class="cover"></div>
     <div class="content">{{ content }}</div>
   </article>
+  <div id="disqus_thread" class="comments"></div>
+  <script src="http://makestartupadmin.disqus.com/embed.js" async="async"></script>
 </div>
