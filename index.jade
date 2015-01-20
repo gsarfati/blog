@@ -2,6 +2,34 @@
 ="layout: default\n"
 ="---\n"
 
+script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js")
+
+
+script.
+  var burndown = {}
+
+      burndown.data = [0,2,12,16,20,32];
+      burndown.width = 200;
+      burndown.height = 100;
+      burndown.max = Math.max.apply(Math, burndown.data);
+      burndown.min = Math.min.apply(Math, burndown.data);
+      console.log(burndown.max);
+      console.log(burndown.min);
+  var svg = d3.select('#burndown')
+    .attr('width', burndown.width)
+    .attr('height', burndown.height);
+
+  var y = svg
+    .append('line')
+    .attr('x1', 20)
+    .attr('y1', 50)
+    .attr('x2', 90)
+    .attr('y2', burndown.height)
+    .attr('stroke', 'black')
+    .attr('stroke-width', 5);
+
+
+
 
 .home
   .slider
@@ -19,7 +47,9 @@
         //- |Pour apprendre continuellement tous les jours et ne pas rester dans ma zone de confort , je vais essayer de publier des articles sur divers sujets liés a mon univers professionnel. N'hésitez pas a faires des pull request pour publier des articles, me corriger ou meme pour améliorer le blog que j'ai fais trés rapidement sous Jekyll !
 
   .grid
+
     .metrics
+    //
       .metric
         a(href="https://trello.com/b/M4LT8OUE/makestartup")
           h1.picto
@@ -29,6 +59,7 @@
         h1 Nombre de Sprint
       .metric
         h1 Burndown chart
+        svg(id="burndown")
       .metric
         h1 Chiffre d'affaire
       .metric
